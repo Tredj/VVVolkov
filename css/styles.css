@@ -3452,26 +3452,49 @@ img.u-pull-left {
 /* --------------------------------------------------------------------
  * ## about hobbies
  * -------------------------------------------------------------------- */
-.about-hobbies{
-    padding-top : calc(6 * var(--space));
-}
-
-.about-hobbies .skills-list {
-    list-style  : none;
-    margin-top  : var(--vspace-1);
-    margin-left : 0;
-}
-
-.about-hobbies .skills-list li {
-    display      : inline-block;
-    padding-left : 0;
-}
-
-.about-hobbies .skills-list li:not(:last-child)::after {
-    content : ", ";
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(8, min-content); /* Make each column fit content */
+    gap: 5px; /* Reduce space between squares */
+    justify-content: center; /* Center the grid */
+    margin-top: var(--vspace-1);
 }
 
 
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #2C2C2D;
+    border-radius: 5px;
+    padding: 12px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    filter: invert(100%);
+}
+
+.skill-item span {
+    color: #ffffff; /* Change this to any color you want */
+	line-height: 1.2;
+	white-space: normal;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
 /* --------------------------------------------------------------------
  * ## about timelines
  * -------------------------------------------------------------------- */
