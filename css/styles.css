@@ -3456,19 +3456,19 @@ img.u-pull-left {
 .skills-grid {
     display: flex;
     flex-direction: row;
-    overflow: hidden;
+    overflow: auto; /* ENABLE horizontal scroll */
     gap: 10px;
     padding: 10px 0;
     scroll-snap-type: x mandatory;
     scroll-padding: 10px;
     -webkit-overflow-scrolling: touch;
 
-    scrollbar-width: none;             /* Firefox */
-    -ms-overflow-style: none;          /* IE 10+ */
+    scrollbar-width: none;       /* Firefox */
+    -ms-overflow-style: none;    /* IE/Edge */
 }
 
 .skills-grid::-webkit-scrollbar {
-                      /* Chrome, Edge, Safari */
+    display: none;  /* Chrome, Edge, Safari */
 }
 
 .skill-item {
@@ -3478,7 +3478,7 @@ img.u-pull-left {
     align-items: center;
     justify-content: center;
     background-color: #2C2C2D;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 12px;
     width: 150px;
     height: 150px;
@@ -3499,9 +3499,10 @@ img.u-pull-left {
 }
 
 .skill-item span {
-    color: #ffffff; /* Change this to any color you want */
-	line-height: 1.2;
-	white-space: normal;
+    color: #ffffff;
+    line-height: 1.2;
+    white-space: normal;
+    word-break: break-word;
 }
 
 .skill-item:hover {
